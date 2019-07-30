@@ -4,7 +4,6 @@ import {GridView,Bir,Input,Button} from "./myStyle"
 const Form = (props) => {
     const { values, handleChange, handleSubmit } = useForm(getData);
 function getData(kind) {
-
     props.setName(props.kind.concat(kind))
 }
     return (

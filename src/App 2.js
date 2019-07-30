@@ -25,5 +25,4 @@ const li = {
     </div>
   )
 }
-
 export default App
