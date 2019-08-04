@@ -53,10 +53,7 @@ const buttonStyle2 = {
   left: '40%'
 
 }
-const showStyle = {
-display: 'flex',
-  width: '50%',
-}
+
 const Form = (props) => {
     const { values, handleChange, handleSubmit } = useForm(getData);
     props.setKind(props.newKind)
@@ -99,7 +96,7 @@ const Form = (props) => {
               <Button style={(props.kind) ? buttonStyle2 : buttonStyle1 } type="submit" className="button is-block is-info is-fullwidth">{(props.kind) ? 'New Search' : 'Find Non-Profit'}</Button>
 
 </Bir>
-<Show kind={props.kind} kindp={props.kindp} setKindp={props.setKindp} zip={props.zip} setZip={props.setZip} zipp={props.zipp} setZipp={props.setZipp} vData={props.vData} volNext={props.volNext} setNext={props.setNext} ></Show>
+{/* <Show kind={props.kind} kindp={props.kindp} setKindp={props.setKindp} zip={props.zip} setZip={props.setZip} zipp={props.zipp} setZipp={props.setZipp} vData={props.vData} volNext={props.volNext} setNext={props.setNext} ></Show> */}
             </form>
           </div>
         </div>
