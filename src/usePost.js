@@ -48,7 +48,7 @@ function usePost (setData,volData) {
         console.log('data error 1',data)
               }
                )
-              }, []);
+              }, [setData,volData]);
   }
 
 export default usePost;

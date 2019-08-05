@@ -47,15 +47,14 @@ const Form = (props) => {
 <div className="field"  style={(props.fresh) ? fieldStyle : fieldStyle } >
           <label className="label" style={props.fresh ? {"display" : "none"} : {"display" : "flex"}} >What kind of Non-Profit are You Looking For?</label>
                 <div className="control">
-                <Input placeholder='What are you looking for?' className="input" size='100' type="text" name="kind" onChange={handleChange} value={values.kind} required />
-                {/* <Select options={ techCompanies } /> */}
+                <Input placeholder='What are you looking for?' className="input" size='100' type="text" name="kind" onChange={handleChange} value={values.kind ? values.kind : ' '} required />
 
                 </div>
               </div>
               <div className="field"   style={(props.fresh) ? fieldStyle : fieldStyle } >
           <label  className="label" style={props.fresh ? {"display" : "none"} : {"display" : "flex"}} >Zip Code</label>
                 <div className="control">
-                <Input placeholder='Enter zip code' className="input" size='5' type="number" min='20588' max='21930' name="zip" onChange={handleChange} value={values.zip} required />
+                <Input placeholder='Enter zip code' className="input" size='5' type="number" min='20588' max='21930' name="zip" onChange={handleChange} value={values.zip ? values.zip : 2} required />
                 {/* <Select options={ techCompanies } /> */}
                 </div>
               </div>

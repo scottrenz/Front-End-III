@@ -28,9 +28,6 @@ import './Form.css';
 const Show = (props) => {
 
 const resultArr = []
-console.log('show vData is',props.vData)
-console.log('show vData 0 is',props.vData[0])
-console.log('show volData  is',props.volData)
 if (props.volData)
 {props.vData=props.volData}
 for (let i=0;i<props.vData.length;i++)
@@ -38,7 +35,6 @@ for (let i=0;i<props.vData.length;i++)
 { resultArr.push(props.vData[i])
 }
 }
-// props.setKind('')
 function back () {
   window.location.reload(false);
   return <div> </div>
@@ -47,8 +43,6 @@ function back () {
     const myFunction = function (element,ix,arr) {
         if (resultArr[ix] &&  ix<(4) )
       { 
-        console.log('resultarr is',ix,arr[ix])
-
         return (
 <div  key={arr[ix]['name']}>
 <Column style={props.kind ? {"display" : 'flex'} : {"display" : 'none'}} className={ix===0 ? 'bottomStyle' : 'bottomStyle2'} >

@@ -1,9 +1,7 @@
 import React, {  useState } from "react"
 import Form from './Form'
-import Form2 from './Form2'
-import Begin from './Begin'
 import usePost from './usePost'
-import { Switch, Link } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from 'react-router-dom';
 import './App.css';
@@ -35,7 +33,6 @@ let fail = false
       {dataU.push(item)}
     }
     })
-    console.log('datau is',dataU)
 setData(dataU)
   }
 let vData = [{name: '', description: '', website: '', address: '', city: '', zip: ''}]
@@ -79,76 +76,59 @@ vData[0]=              {
                 "city": "Baltimore",
                 "zip code": "21202"
               }
-              console.log('before conc',vData)
 
-              let vData2 = {
-                "1": {
-                  "name": "Feed the Children, Inc.",
-                  "description": "One of America's most effective charities providing food, clothing, medical care, education, and emergency relief to children in the United States and overseas since 1979.",
-                  "website": "http://www.feedthechildren.org",
-                  "address": "333 N. Meridian Ave",
-                  "city": "Oklahoma City",
-                  "zip code": 73107
-                },
-                "2": {
-                  "name": "Rude Ranch Animal Rescue",
-                  "description": "A no-kill organization dedicated to providing refuge to abandoned, abused and homeless dogs and cats until they are placed in permanent homes.",
-                  "website": "http://www.ruderanch.org",
-                  "address": "3200 Ivy Way",
-                  "city": "Harwood",
-                  "zip code": 20776
-                },
-                "3": {
-                  "name": "Maryland Zoo in Baltimore (The)",
-                  "description": "Educational programs and naturalistic exhibits provide visitors with educational recreation activities and further understanding of the urgent need to conserve and protect wildlife and wetlands.",
-                  "website": "http://www.marylandzoo.org",
-                  "address": "1876 Mansion House Drive, Druid Hill Park",
-                  "city": "Baltimore",
-                  "zip code": 21217
-                },
-                "4": {
-                  "name": "Christopher Reeve Foundation",
-                  "description": "The Reeve Foundation is dedicated to curing spinal cord injury by funding innovative research and improving the quality of life for people living with paralysis.",
-                  "website": "http://www.christopherreeve.org",
-                  "address": "636 Morris Turnpike, Suite 3A",
-                  "city": "Short Hills",
-                  "zip code": 7078
-                },
-                "5": {
-                  "name": "Institute of Notre Dame",
-                  "description": "A college-preparatory school for young women, rooted in the values of the Catholic faith and the educational vision of the School Sisters.",
-                  "website": "http://www.indofind.org",
-                  "address": "901 Aisquith Street",
-                  "city": "Baltimore",
-                  "zip code": 21202
-                }
-              }
-              // vData = vData.concat(vData)
-              console.log('after conc',vData2)
-              function back () {
-                window.location.reload(false);
-                return <div> </div>
-              }
+              // let vData2 = {
+              //   "1": {
+              //     "name": "Feed the Children, Inc.",
+              //     "description": "One of America's most effective charities providing food, clothing, medical care, education, and emergency relief to children in the United States and overseas since 1979.",
+              //     "website": "http://www.feedthechildren.org",
+              //     "address": "333 N. Meridian Ave",
+              //     "city": "Oklahoma City",
+              //     "zip code": 73107
+              //   },
+              //   "2": {
+              //     "name": "Rude Ranch Animal Rescue",
+              //     "description": "A no-kill organization dedicated to providing refuge to abandoned, abused and homeless dogs and cats until they are placed in permanent homes.",
+              //     "website": "http://www.ruderanch.org",
+              //     "address": "3200 Ivy Way",
+              //     "city": "Harwood",
+              //     "zip code": 20776
+              //   },
+              //   "3": {
+              //     "name": "Maryland Zoo in Baltimore (The)",
+              //     "description": "Educational programs and naturalistic exhibits provide visitors with educational recreation activities and further understanding of the urgent need to conserve and protect wildlife and wetlands.",
+              //     "website": "http://www.marylandzoo.org",
+              //     "address": "1876 Mansion House Drive, Druid Hill Park",
+              //     "city": "Baltimore",
+              //     "zip code": 21217
+              //   },
+              //   "4": {
+              //     "name": "Christopher Reeve Foundation",
+              //     "description": "The Reeve Foundation is dedicated to curing spinal cord injury by funding innovative research and improving the quality of life for people living with paralysis.",
+              //     "website": "http://www.christopherreeve.org",
+              //     "address": "636 Morris Turnpike, Suite 3A",
+              //     "city": "Short Hills",
+              //     "zip code": 7078
+              //   },
+              //   "5": {
+              //     "name": "Institute of Notre Dame",
+              //     "description": "A college-preparatory school for young women, rooted in the values of the Catholic faith and the educational vision of the School Sisters.",
+              //     "website": "http://www.indofind.org",
+              //     "address": "901 Aisquith Street",
+              //     "city": "Baltimore",
+              //     "zip code": 21202
+              //   }
+              // }
     return (
 
     <div className="App">
-                 {/* <button className={'buttonshow2'}><Link className='movie-card' to={`/begin`}>Begin</Link></button> */}
-
-            {/* <Route path='/form' component={Refresh} /> */}
-  {/* render={(props) => <Form2 forceRefresh={true} kind={kind} setKind={setKind} zip={zip} setZip={setZip} fresh={fresh} setFresh={setFresh} vData={vData} volData={volData} isAuthed={true} />}
-/> */}
-      {/* <header className="App-header">
-      </header> */}
-      {/* <div className="App-header"> */}
       <div >
-    <Form kind={kind} setKind={setKind} zip={zip} setZip={setZip} fresh={fresh} setFresh={setFresh} back={back} vData={vData} volData={volData} />
+    <Form kind={kind} setKind={setKind} zip={zip} setZip={setZip} fresh={fresh} setFresh={setFresh} vData={vData} volData={volData} />
  <Router>
-    {/* <Route exact path='/' component={Form} /> */}
 <Switch>
     <Route exact path="/" component={Home} />
     <Route path='/begin' render={(props) => <Refresh {...props} setFresh={setFresh} fresh={fresh} isAuthed={true} />}/>
 </Switch>
-    {/* <Route path='/begin' component={Refresh} /> */}
     </Router>
   </div>
     </div>
@@ -157,17 +137,8 @@ vData[0]=              {
 }
 
 export default App;
-
-function Refresh (props) {
-  console.log(props)
-    // alert("hi scott")
-  // props.history.goBack()
-    // browserHistory.replace("/")
-    // window.location.replace(window.location.href)
-    // window.location.reload(false);
-  // props.setFresh(false)
-    return <div> </div>
-  }
-  function Home (props) {
+function Home (props) {
+  return <div> </div>
+}  function Refresh (props) {
     return <div> </div>
   }
