@@ -193,20 +193,29 @@
  }
  
  .buttonshow {
- color: black;
- background-color: white;
- font-size: 20px;
- border: 2px none black;
- border-radius: 0px;
- width: 290px;
- }
- .buttonshow2 {
- color: black;
- background-color: white;
- font-size: 20px;
- border: 2px solid black;
- border-radius: 0px;
- margin-left: 42%;
- width: 118px;
- }
- 
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    border: 2px none black;
+    border-radius: 0px;
+    width: 290px;
+    }
+    .buttonshow2 {
+        color: black;
+        background-color: white;
+        font-size: 20px;
+        border: 2px solid black;
+        border-radius: 0px;
+        margin-left: 42%;
+        width: 118px;
+        }
+        .buttonshow3 {
+            color: black;
+            background-color: white;
+            font-size: 20px;
+            border: 2px solid black;
+            border-radius: 0px;
+            margin-left: 42%;
+            width: 114px;
+            }
+                   

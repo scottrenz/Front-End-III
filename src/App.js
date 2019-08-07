@@ -1,9 +1,9 @@
 import React, {  useState } from "react"
 import Form from './Form'
-import usePost from './usePost'
-import { Switch } from 'react-router-dom'
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route } from 'react-router-dom';
+// import usePost from './usePost'
+// import { Switch } from 'react-router-dom'
+// import { BrowserRouter as Router } from "react-router-dom";
+// import { Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   const [zip, setZip] = useState('')
   const [fresh, setFresh] = useState(false)
 
-  usePost (setData,volData)
+  //  usePost (setData,volData)
   if (volData)
   {
 let data = volData
@@ -124,12 +124,6 @@ vData[0]=              {
     <div className="App">
       <div >
     <Form kind={kind} setKind={setKind} zip={zip} setZip={setZip} fresh={fresh} setFresh={setFresh} vData={vData} volData={volData} />
- <Router>
-<Switch>
-    <Route exact path="/" component={Home} />
-    <Route path='/begin' render={(props) => <Refresh {...props} setFresh={setFresh} fresh={fresh} isAuthed={true} />}/>
-</Switch>
-    </Router>
   </div>
     </div>
 
@@ -137,8 +131,3 @@ vData[0]=              {
 }
 
 export default App;
-function Home (props) {
-  return <div> </div>
-}  function Refresh (props) {
-    return <div> </div>
-  }

@@ -1,30 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 import {Column} from "./myStyle"
 import './Form.css';
-
-          // const rowStyle1 = {
-          //   color: 'dodgerblue',  
-          //   width: '600px',  
-          //     }
-              
-          //     const rowStyle2 = {
-          //       width: '600px',  
-          //         }
-              
-          //         const rowStyle3 = {
-          //           width: '600px',  
-          //             }
-                    //   const contain = {
-                    //   color: 'black',
-                    //   backgroundColor: 'white',
-                    //   fontSize: '20px',
-                    //     border: '2px solid black',
-                    //     borderRadius: '5px',
-                    //     width: '600px',
-                    // }
-                      
-                                                    
 const Show = (props) => {
 
 const resultArr = []
@@ -35,10 +12,10 @@ for (let i=0;i<props.vData.length;i++)
 { resultArr.push(props.vData[i])
 }
 }
-function back () {
-  window.location.reload(false);
-  return <div> </div>
-}
+// function back () {
+//   window.location.reload(false);
+//   return <div> </div>
+// }
 
     const myFunction = function (element,ix,arr) {
         if (resultArr[ix] &&  ix<(4) )
@@ -56,12 +33,11 @@ function back () {
       } 
 
     return (
-        <div >
-        {/* { ( props.vData[0]['name']) !== '' && resultArr.map(myFunction)} */}
-        { resultArr.map(myFunction)}
+      <div >
+      {/* { ( props.vData[0]['name']) !== '' && resultArr.map(myFunction)} */}
+        {  localStorage.getItem('show') && resultArr.map(myFunction)}
         {/* { ( props.kind !== '' && props.vData[0]['name'] === '' ) && <div>No Results {props.vData.length} {props.kind} {props.vData[0]['name']} {props.volNext}</div>} */}
         { ( !resultArr ) && <div>No Results {props.vData.length} {props.kind} {props.vData[0]['name']} </div>}
-
 
 <div className='myClass' >            
  <span className='span1'>
@@ -88,7 +64,11 @@ function back () {
             <button className={'buttonshow'}><h3>About Us</h3></button>
             <Column>
             <div></div>
-           <button className={'buttonshow2'}><Link className='begin' to={`/begin`} onClick={back}>Begin</Link></button>
+           <Link className={'buttonshow3'} to={`/begin`}>Begin</Link>
+<Switch>
+           <Route path='/none' render={(props) => <Hello {...props} kind={props.kind} />}/>
+           <Route path='/begin' render={(prop) => <Refresh {...prop} kind={props.kind} setFresh={props.setFresh} setKind={props.setKind}/>}/>
+</Switch>
            <button className={'buttonshow2'}>Home</button>
            <button className={'buttonshow2'}>About Us</button>
             <button className={'buttonshow2'}>Vounteering</button>
@@ -104,3 +84,40 @@ function back () {
 };
 
 export default Show;
+
+function Refresh (props) {
+  // console.log('show refresh is',props.history.length,'kind',props.kind)
+  console.log('props refresh is',props)
+
+  let c =parseInt(localStorage.getItem('called'))
+ 
+  if(!props.kind)
+  {localStorage.setItem('called', 0)}
+else
+{
+  c =parseInt(localStorage.getItem('called'))
+if(props.kind && c===0)
+{
+  // console.log('first')
+  localStorage.setItem('called', props.history.length)
+}
+else
+{
+  // console.log('not first')
+  c =parseInt(localStorage.getItem('called'))
+  if(c!==0 && ( parseInt(props.history.length) !== c))
+  {console.log('clicked',c , parseInt(props.history.length))
+  localStorage.setItem('called', 0)
+  props.setFresh(false)
+  props.setKind('')
+}
+}
+
+}
+  return <div> </div>
+    }
+    function Hello (props) {
+      console.log('hello  is',props)
+      return <div> </div>
+        }
+    

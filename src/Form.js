@@ -31,7 +31,6 @@ const Form = (props) => {
       props.setKind(values.kind.trim())
       props.setZip(values.zip)
       props.setFresh(true)
-
 }
     return (
       <div  >
@@ -61,7 +60,7 @@ const Form = (props) => {
               <Button className={(props.fresh) ? 'buttonStyle2' : 'buttonStyle1' } type="submit"> {(props.fresh) ? 'New Search' : 'Find Non-Profit'}</Button>
 
 </Bir>
-<Show  style={( props.fresh) ? {"display" : "none"} : {"display" : "none"} } kind={props.kind} setKind={props.setKind} zip={props.zip} setZip={props.setZip} vData={props.vData} ></Show>
+<Show  setFresh={props.setFresh}  fresh={props.Fresh} kind={props.kind} setKind={props.setKind} zip={props.zip} setZip={props.setZip} vData={props.vData} volData={props.volData}></Show>
             </form>
           </div>
         </div>
